@@ -1,0 +1,21 @@
+
+# Security Policy
+
+## Reporting a Vulnerability
+
+Please do not disclose security vulnerabilities through public GitHub issues.
+
+Report suspected vulnerabilities privately to the repository maintainer.
+
+## Security Principles
+
+- Never commit API keys or credentials.
+- Avoid storing unnecessary personal information.
+- Validate external inputs.
+- Apply least-privilege access.
+- Document security-sensitive changes.
+- Review dependencies regularly.
+
+## Scope
+
+Security reports concerning data exposure, authentication, authorisation, dependency vulnerabilities and decision record integrity are welcome.
