@@ -1,0 +1,438 @@
+
+# Open Decision Ledger (ODL)
+
+### An Open-Source Toolkit for Explainable, Auditable and Human-Centred AI Decisions
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Project Status](https://img.shields.io/badge/status-early%20development-orange.svg)]()
+
+**Open Decision Ledger (ODL)** is an open-source initiative to make complex human and AI-assisted decisions transparent, structured, explainable and auditable.
+
+The project explores a practical question:
+
+> How can we make decisions involving humans, data, automation and artificial intelligence more transparent, measurable and accountable?
+
+ODL aims to provide developers, researchers, product teams and organisations with reusable tools for designing, evaluating and governing decision workflows.
+
+---
+
+## 1. The Problem
+
+Organisations increasingly rely on artificial intelligence and automated workflows to support business decisions.
+
+However, several important challenges remain:
+
+- AI recommendations can lack explainability.
+- Decision criteria are often undocumented.
+- Human approval processes are inconsistent.
+- Assumptions and evidence are difficult to trace.
+- Automated decisions can introduce unintended bias.
+- Organisations struggle to evaluate decision quality over time.
+- Governance and accountability are frequently added too late.
+
+Most AI tools focus on generating outputs.
+
+ODL focuses on understanding, evaluating and governing the decisions behind those outputs.
+
+---
+
+## 2. Our Vision
+
+Build a lightweight, extensible and open-source decision intelligence toolkit that helps people and organisations make better decisions with the support of data, automation and AI.
+
+Our principles:
+
+1. Explainability over black-box recommendations.
+2. Evidence over assumptions.
+3. Human accountability over blind automation.
+4. Measurable outcomes over subjective confidence.
+5. Reproducibility over undocumented decisions.
+6. Open standards over vendor lock-in.
+7. Privacy and security by design.
+
+---
+
+## 3. Core Capabilities
+
+The project roadmap includes six foundational capabilities.
+
+### A. Decision Structuring
+
+Convert an unstructured problem into a structured decision record.
+
+Capture:
+
+- Decision statement
+- Context and objectives
+- Available alternatives
+- Constraints
+- Stakeholders
+- Success criteria
+- Expected outcomes
+
+### B. Multi-Criteria Decision Evaluation
+
+Evaluate alternatives against explicitly defined criteria.
+
+Planned capabilities:
+
+- Weighted scoring
+- Criteria management
+- Alternative comparison
+- Sensitivity analysis
+- Confidence scoring
+- Evidence references
+
+### C. Explainable AI Recommendations
+
+Provide a structured way to document AI-assisted recommendations.
+
+Capture:
+
+- Recommendation
+- Supporting evidence
+- Model or system information
+- Assumptions
+- Confidence
+- Limitations
+- Human review status
+
+### D. Human-in-the-Loop Governance
+
+Introduce approval and accountability into automated decision workflows.
+
+Planned capabilities:
+
+- Human approval checkpoints
+- Escalation rules
+- Decision ownership
+- Override documentation
+- Approval history
+
+### E. Decision Audit Trail
+
+Maintain a traceable record of how decisions evolve.
+
+Capture:
+
+- Original decision
+- Changes in assumptions
+- New evidence
+- Changes in recommendations
+- Human interventions
+- Final outcome
+
+### F. Decision Quality Evaluation
+
+Compare expected outcomes with actual results.
+
+Explore:
+
+- Outcome measurement
+- Prediction accuracy
+- Decision consistency
+- Risk indicators
+- Bias assessment
+- Post-decision reviews
+
+---
+
+## 4. Architecture
+
+The intended architecture is modular and technology-independent.
+
+```text
+             DECISION INPUT
+                   |
+                   v
+          Decision Structuring
+                   |
+                   v
+          Criteria & Evidence
+                   |
+                   v
+          Decision Evaluation
+                   |
+             +-----+-----+
+             |           |
+             v           v
+         Rule Engine   AI Engine
+             |           |
+             +-----+-----+
+                   |
+                   v
+          Explainability Layer
+                   |
+                   v
+          Human Approval Layer
+                   |
+                   v
+          Decision Record
+                   |
+                   v
+          Audit & Evaluation
+```
+
+### Proposed Technology Stack
+
+| Layer | Technology |
+|---|---|
+| Core engine | Python |
+| Data structures | JSON / Pydantic |
+| API | FastAPI |
+| Database | SQLite / PostgreSQL |
+| Interface | Streamlit |
+| Automation | n8n integrations |
+| AI integration | Provider-independent adapters |
+| Testing | Pytest |
+| Documentation | Markdown |
+| Version control | Git / GitHub |
+
+These are proposed implementation choices, not claims of completed functionality.
+
+---
+
+## 5. Initial Use Cases
+
+### Use Case 1: Vendor Selection
+
+Compare potential vendors using:
+
+- Cost
+- Technical capability
+- Security
+- Reliability
+- Implementation complexity
+- Business value
+
+Generate an explainable comparison and document the final selection.
+
+### Use Case 2: AI-Assisted Hiring Decisions
+
+Structure evaluation criteria, record supporting evidence and require human review.
+
+The toolkit is intended to support accountable decision-making, not automated employment decisions.
+
+### Use Case 3: Enterprise AI Approval
+
+Create an approval workflow for proposed AI use cases.
+
+Evaluate:
+
+- Business value
+- Data sensitivity
+- Operational risk
+- Regulatory considerations
+- Human oversight
+- Implementation readiness
+
+### Use Case 4: Delivery Address Exception Management
+
+Evaluate delivery exceptions using available address information, delivery constraints and confidence indicators.
+
+Record why an address was accepted, rejected or escalated for human intervention.
+
+### Use Case 5: Business Decision Reviews
+
+Record strategic decisions, their assumptions, expected outcomes and subsequent performance.
+
+---
+
+## 6. Example Decision Record
+
+A conceptual example:
+
+```json
+{
+  "decision_id": "ODL-001",
+  "title": "Select an enterprise software vendor",
+  "objective": "Choose the most suitable vendor",
+  "alternatives": [
+    "Vendor A",
+    "Vendor B",
+    "Vendor C"
+  ],
+  "criteria": [
+    {
+      "name": "Cost",
+      "weight": 0.25
+    },
+    {
+      "name": "Security",
+      "weight": 0.35
+    },
+    {
+      "name": "Reliability",
+      "weight": 0.25
+    },
+    {
+      "name": "Implementation",
+      "weight": 0.15
+    }
+  ],
+  "governance": {
+    "human_approval_required": true,
+    "decision_owner": "Business Owner"
+  },
+  "status": "proposed"
+}
+```
+
+This example illustrates the intended data structure. It is not yet a production decision engine.
+
+---
+
+## 7. Responsible AI and Governance
+
+ODL is designed around responsible decision intelligence.
+
+The project will explore:
+
+- Data minimisation
+- Privacy by design
+- Explainability
+- Human oversight
+- Bias monitoring
+- Risk classification
+- Decision traceability
+- Reproducibility
+- Secure integration practices
+
+The project does not claim regulatory certification or guarantee that an individual decision is unbiased.
+
+---
+
+## 8. Development Roadmap
+
+### Phase 1: Foundation
+
+- [ ] Define the decision record schema.
+- [ ] Establish project architecture.
+- [ ] Create documentation.
+- [ ] Define contribution standards.
+- [ ] Publish the initial MIT-licensed repository.
+
+### Phase 2: Core Engine
+
+- [ ] Implement decision record validation.
+- [ ] Implement multi-criteria scoring.
+- [ ] Add evidence references.
+- [ ] Add decision comparison.
+- [ ] Add automated tests.
+
+### Phase 3: Explainability
+
+- [ ] Generate decision explanations.
+- [ ] Record assumptions and limitations.
+- [ ] Implement confidence documentation.
+- [ ] Introduce sensitivity analysis.
+
+### Phase 4: Governance
+
+- [ ] Implement approval checkpoints.
+- [ ] Introduce decision ownership.
+- [ ] Create audit history.
+- [ ] Add human override documentation.
+
+### Phase 5: Integrations
+
+- [ ] Develop REST API.
+- [ ] Build a Streamlit interface.
+- [ ] Explore n8n integration.
+- [ ] Introduce optional AI provider adapters.
+
+### Phase 6: Community
+
+- [ ] Publish developer documentation.
+- [ ] Add practical examples.
+- [ ] Invite external contributors.
+- [ ] Review and merge community contributions.
+- [ ] Publish versioned releases.
+
+---
+
+## 9. Open-Source Contribution
+
+ODL welcomes contributions from:
+
+- Software developers
+- AI engineers
+- Data scientists
+- Decision intelligence practitioners
+- Product managers
+- Researchers
+- AI governance professionals
+- Technical writers
+
+You can contribute through:
+
+1. Bug reports.
+2. Feature proposals.
+3. Documentation improvements.
+4. Architecture reviews.
+5. Test cases.
+6. Practical use cases.
+7. Code contributions.
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
+
+All contributions must be original, appropriately licensed and relevant to the project.
+
+---
+
+## 10. Project Governance
+
+The project intends to follow an open and transparent contribution model.
+
+Proposed governance principles:
+
+- Public issue tracking.
+- Documented feature decisions.
+- Peer-reviewed pull requests.
+- Transparent release notes.
+- Responsible disclosure of security issues.
+- No undisclosed collection of user data.
+- No requirement to use a specific AI provider.
+
+Maintainer decisions and project policies will be documented as the project matures.
+
+---
+
+## 11. About the Project
+
+Open Decision Ledger is an independent open-source initiative focused on Decision Intelligence, responsible AI adoption and human-centred automation.
+
+The initiative brings together concepts from:
+
+- Decision Intelligence
+- Enterprise AI
+- Business process management
+- AI governance
+- Explainable AI
+- Human-in-the-loop systems
+- Digital transformation
+
+The objective is to make decision processes easier to understand, evaluate, reproduce and improve.
+
+**Project status:** Early development. The capabilities and roadmap above describe intended work, not completed features.
+
+---
+
+## 12. Licence
+
+This project is intended to be released under the MIT License.
+
+See [LICENSE](LICENSE) for details.
+
+---
+
+## 13. Get Involved
+
+Have an idea, use case or improvement?
+
+Open an issue or submit a pull request.
+
+Let's build practical open-source infrastructure for better human and AI decision-making.
+
+**Open Decision Ledger — Better decisions. Transparent intelligence. Accountable automation.**
